@@ -2,10 +2,22 @@ var express = require('express')
 var app = express()
 
 app.get('/', function (req, res) {
-  console.log('Hello Express!');
+  var page="<html>"+
+            "<body>"+
+            "<h1>Index.html<h1>"+
+            "</body>"+
+            "</html>"
+  // console.log('Hello Express!');
+  res.send(page)
 })
-app.get('/abc', function (req, res) {
-  console.log('Hello Express123456!');
+app.get('/about.html', function (req, res) {
+  // console.log('Hello Express123456!');
+  var page1="<html>"+
+            "<body>"+
+            "<h1>About.html<h1>"+
+            "</body>"+
+            "</html>"
+    res.send(page1)
 })
 
 app.listen(3000,function(){
