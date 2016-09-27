@@ -1,13 +1,17 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function (req, res) {
+app.get('/:name', function (req, res) {
+  var username=req.params.name; 
   var page="<html>"+
             "<body>"+
-            "<h1>Index.html<h1>"+
+            "<h1>"+
+            username +"的购物车"+
+            "<h1>"+
             "</body>"+
             "</html>"
   // console.log('Hello Express!');
+
   res.send(page)
 })
 app.get('/about.html', function (req, res) {
